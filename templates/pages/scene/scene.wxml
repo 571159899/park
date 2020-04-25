@@ -1,0 +1,4 @@
+<!--pages/scene/scene.wxml-->
+<view class="padding-xs">
+<image class="img" src="{{img}}"></image>
+</view>

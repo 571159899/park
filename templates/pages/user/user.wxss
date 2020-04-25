@@ -1,0 +1,65 @@
+/* pages/user/user.wxss */
+
+.container {
+  /* background-color: #268dcd; */
+  background-image: url(https://i1.fuimg.com/704744/a4fc0c2065bf6fcf.jpg);
+  height: 22vh;
+}
+
+.head {
+  width: 100%;
+}
+
+.userinfo {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  padding-bottom: 50rpx;
+  padding-top: 50rpx;
+}
+
+.userinfo-avatar {
+  width: 3rem;
+  height: 3rem;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color:white;
+  font-size: 30rpx;
+}
+
+.usermotto {
+  margin-top: -40rpx;
+  border-radius: 10rpx;
+  background-color: white;
+  box-shadow: 0rpx 0rpx 5rpx;
+}
+
+.logo {
+  text-align: center;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+.usermottos{
+  border-radius: 10rpx;
+  background-color: white;
+  box-shadow: 0rpx 0rpx 5rpx;
+}
+.all{
+  border-bottom: 1rpx solid gainsboro;
+}
+.root{
+  margin-top: -40rpx;
+}
+.usermottoes{
+  display: flex;
+  justify-content: center;
+}
+.usermottoes image{
+  height: 5rem;
+}

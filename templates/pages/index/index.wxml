@@ -1,0 +1,116 @@
+<!-- 轮播 -->
+<swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+	<swiper-item wx:for="{{ggtop}}" wx:key>
+		<image src="{{item.photo}}" mode="aspectFill"></image>
+		<video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover"></video>
+	</swiper-item>
+</swiper>
+<!-- 景区、公告 -->
+<view class="flex margin notice">
+	<view class="flex cont">
+		<van-row gutter="20" class="padding logo">
+			<van-col span="24">
+				<van-col span="6">景区</van-col>
+				<van-col span="18" class="introduce">{{introduce}}</van-col>
+			</van-col>
+			<van-col span="24">
+				<van-col span="6">公告</van-col>
+				<van-col span="18" class="introduce"></van-col>
+			</van-col>
+		</van-row>
+	</view>
+</view>
+<!-- 景区介绍 -->
+<view class="flex margin title radius">{{introduces}}</view>
+<!-- 中部导航栏 -->
+<view class="usermotto">
+	<van-row gutter="20" class="logo padding radius">
+		<van-col span="6" wx:for="{{prolist}}" wx:key>
+			<navigator url="{{item.url}}">
+				<image class="icon" src="{{item.img}}"></image>
+				<view class="icon_title">{{item.name}}</view>
+			</navigator>
+		</van-col>
+	</van-row>
+</view>
+<!-- 热销门票 -->
+<view class="stripe"></view>
+<view class="felx margin radius">
+	<view>
+		<view class="flex vertical">
+			<image class="vertical_icon" src="{{vertical_icon}}"></image>
+			<view>热销门票</view>
+		</view>
+	</view>
+</view>
+<!-- 全价/半价门票 -->
+<view class="padding-xs" wx:for="{{people}}" wx:key>
+	<!-- 门票价格 -->
+	<view class="full">
+		<view>{{item.name}}</view>
+		<view class="moneys">
+			<view class="money">{{item.price}}</view>
+			<view class="delete">{{item.price_d}}</view>
+		</view>
+	</view>
+	<!-- 购买 -->
+	<view class="half">
+		<view>{{item.time}}</view>
+		<view class="flex bg-blue btn">
+			<navigator url="{{item.src}}">购买</navigator>
+		</view>
+	</view>
+</view>
+<!-- 查看全部门票 -->
+<view class="flex">
+	<button class="see">查看全部 ></button>
+</view>
+<view class="stripe"></view>
+<!-- 游玩攻略 -->
+<view class="felx margin radius">
+	<view>
+		<view class="flex vertical">
+			<image class="vertical_icon" src="{{vertical_icons}}"></image>
+			<view>游玩攻略</view>
+		</view>
+	</view>
+</view>
+<view class="strategy">
+	<image src="{{strategy}}"></image>
+	<view>
+		<navigator url="">演出节目单</navigator>
+	</view>
+</view>
+<!-- 查看游玩攻略全部 -->
+<view class="flex">
+	<button class="see">查看全部 ></button>
+</view>
+<!-- 我的 -->
+<view class="mine">
+	<navigator url="../user/user">
+		<view class="padding">
+			<image class="head" src="{{head}}"></image>
+			<view>我的</view>
+		</view>
+	</navigator>
+</view>
+<!-- <button class="">查看全部></button> -->
+<!-- <view class="flex solid-bottom padding justify-center list">
+	<view class="bg-white padding-xs margin-xs radius left" wx:for="{{prolist}}" wx:key>
+		<view bindtap="detail" data-id="{{item.id}}">
+			<image style="width:100%;height:300rpx;" src="{{item.photo_x}}"></image>
+			<view class="van-ellipsis margin-xs radius">{{item.name}}</view>
+			<view class="flex justify-between amount">
+				<view class="margin-xs radius money">￥{{item.price_yh}}</view>
+				<view class="margin-xs radius dele">{{item.price}}</view> -->
+<!-- <view class="margin-xs radius">{{item.recom}}</view> -->
+<!-- <view class="margin-xs radius">销量：{{item.shiyong}}</view>
+			</view>
+		</view>
+	</view>
+</view> -->
+<!-- 按钮 -->
+<!-- <view class="padding flex flex-direction"> -->
+<!-- <button class="cu-btn bg-white margin-tb-sm lg btn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">点击查看更多</button> -->
+<!-- <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button> -->
+<!-- </view> -->
