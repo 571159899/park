@@ -1,0 +1,138 @@
+/* pages/buying/buying.wxss */
+page {
+  font-family: "楷体";
+}
+
+.title,
+.date,
+.poll,
+.news,
+.coupon {
+  width: 94%;
+  margin-left: 3%;
+  box-shadow: 0rpx 0rpx 16rpx;
+  border-radius: 15rpx;
+  margin-top: 25rpx;
+}
+
+.buy {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tips {
+  line-height: 2;
+}
+.choice{
+  margin-bottom: 15rpx;
+}
+.point {
+  text-align: center;
+}
+
+.time{
+  border-radius: 9rpx;
+  font-size: 22rpx;
+  height: 7vh;
+  line-height: 1.7;
+}
+.times {
+  border-radius: 9rpx;
+  font-size: 22rpx;
+  width: 17vw;
+  height: 7vh;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.day {
+  color: blue;
+}
+
+.money {
+  color: red;
+}
+.new{
+  padding-bottom: 0;
+}
+.duo {
+  border: 1px solid black;
+  border-radius: 9rpx;
+  height: 7vh;
+  line-height: 1.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: blue;
+} 
+
+.votes {
+  line-height: 2;
+} 
+
+.device,
+.couicon {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cu-form-group input {
+  font-size: 25rpx;
+  font-family: "楷体";
+  display: flex;
+  justify-content: center;
+}
+
+.paly {
+  margin-top: 90rpx;
+  height: 8vh;
+}
+
+.square {
+  height: 8vh;
+  background-color: floralwhite;
+}
+
+.nums {
+  color: red;
+  font-size: 35rpx;
+}
+
+.settle {
+  height: 8vh;
+  line-height: 1.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: blue;
+}
+
+.mustbe {
+  border-top: 1px solid gainsboro;
+}
+
+.understood {
+  width: 90%;
+  margin-left: 5%;
+  line-height: 1.7;
+}
+
+.reserve {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sheet_head {
+  text-align: center;
+}
+
+.screen {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.strong {
+  font-weight: bold;
+  font-size: 30rpx;
+}

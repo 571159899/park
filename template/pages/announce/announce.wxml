@@ -1,0 +1,24 @@
+<!--pages/announce/announce.wxml-->
+<view class="margin box">
+  <navigator url="../scene/scene">
+    <image class="poster" src="{{poster}}"></image>
+  </navigator>
+	<view class="padding">
+		<van-row gutter="20" class="margin">
+			<van-col span="8">
+        <view>{{sight}}</view>
+			</van-col>
+			<van-col span="16">
+				<view class="scene">
+					<navigator url="../guide/guide">
+						<image class="way" src="{{way}}"></image>
+            <view class="tail">{{tail}}</view>
+					</navigator>
+				</view>
+			</van-col>
+      <van-col span="12">
+        <view class="show">{{show}}</view>
+			</van-col>
+		</van-row>
+	</view>
+</view>

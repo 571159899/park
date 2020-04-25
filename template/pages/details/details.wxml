@@ -1,0 +1,178 @@
+<!--pages/details/details.wxml-->
+<!-- 搜索框 -->
+<van-search value="{{ value }}" placeholder="门票名称" use-action-slot bind:change="onChange" bind:search="onSearch">
+	<view slot="action" bind:tap="onClick">搜索</view>
+</van-search>
+<!-- 门票 -->
+<view class="ticket" wx:for="{{person}}" wx:key>
+	<van-row gutter="20">
+		<van-col span="6">
+			<image class="logos" src="{{item.logo}}"></image>
+		</van-col>
+		<van-col class="tick" span="18">
+			<view class="tick_name">{{item.name}}</view>
+			<!-- 门票价格 -->
+			<view class="full">
+				<view class="notice" bindtap="buy">> 购买须知 >></view>
+				<view class="sold">{{item.sold}}</view>
+			</view>
+			<!-- 购买 -->
+			<view class="half">
+				<view class="moneys">
+					<view class="money">{{item.price}}</view>
+					<view class="delete">{{item.price_d}}</view>
+				</view>
+				<view class="flex bg-blue btn">
+					<navigator url="{{item.order}}">
+						<view>购买</view>
+					</navigator>
+				</view>
+			</view>
+		</van-col>
+	</van-row>
+</view>
+<!-- 我的 -->
+<view class="mine">
+	<navigator url="../user/user">
+		<view class="padding">
+			<image class="head" src="{{head}}"></image>
+			<view>我的</view>
+		</view>
+	</navigator>
+</view>
+
+
+<!-- 轮播 -->
+<!-- <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{fous}}" wx:key>
+    <image src="{{fous}}" mode="aspectFill"></image>
+  </swiper-item>
+</swiper> -->
+<!-- 信息 -->
+<!-- <view>
+  <view class="flex justify-between one">
+    <view class="padding-sm radius name">{{pro.name}}</view>
+  </view>
+  <view class="flex justify-between">
+    <view class="padding-sm radius money">￥{{pro.price_yh}}</view>
+    <view class="padding-sm radius stock">库存：{{pro.num}}</view>
+  </view>
+</view> -->
+<!-- 标签页 -->
+<!-- <view>
+  <van-tabs active="a">
+    <van-tab title="图文详情" name="a" class="photo">
+        <rich-text nodes="{{pro.content}}"></rich-text>
+    </van-tab>
+    <van-tab title="产品参数" name="b">
+      <view class="flex solid-bottom padding justify-between">
+        <view class="padding-sm radius">商品名称：{{pro.name}}</view>
+      </view>
+      <view class="flex solid-bottom padding justify-between">
+        <view class="padding-sm radius">商品编号：{{pro.addtime}}</view>
+      </view>
+      <view class="flex solid-bottom padding justify-between">
+        <view class="padding-sm radius">分类：{{pro.cat_name}}</view>
+      </view>
+    </van-tab>
+  </van-tabs>
+</view> -->
+
+<!-- 立即购买按钮 -->
+<!-- <view class="flex flex-direction btn buy">
+  <button class="cu-btn bg-blue lg" bindtap="buy">立即购买</button>
+</view> -->
+<!-- 上拉菜单 -->
+<van-action-sheet bind:close="onClose" show="{{ show }}" >
+	<view class="felx margin" style="text-align:center;">购买须知</view>
+	<!-- 轮播 -->
+	<view style="width:90%;margin-left:5%;">
+		<swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+			<swiper-item wx:for="{{fous}}" wx:key>
+				<image src="{{item.photo}}" mode="aspectFill"></image>
+			</swiper-item>
+		</swiper>
+		<view class="padding-xs strong">商品名称</view>
+	</view>
+	<!-- 商品名称 -->
+	<view class="mustbe">
+		<view class="padding-xs understood">
+			<view class="strong">预订说明</view>
+			<view class="reserve">
+				<view>预定时间：</view>
+				<view>16:00前可购买当日门票</view>
+			</view>
+			<view class="reserve">
+				<view>有效期：</view>
+				<view>游玩当日有效</view>
+			</view>
+			<view class="reserve">
+				<view>票种说明：</view>
+				<view>成人票</view>
+			</view>
+		</view>
+	</view>
+	<!-- 费用说明 -->
+	<view class="mustbe">
+		<view class="padding-xs understood">
+			<view class="strong">费用说明</view>
+			<view class="reserve">
+				<view>费用包含：</view>
+				<view>景区全价门票一张</view>
+			</view>
+		</view>
+	</view>
+	<!-- 使用说明 -->
+	<view class="mustbe">
+		<view class="padding-xs understood">
+			<view class="strong">使用说明</view>
+			<view>
+				<van-row gutter="20">
+					<van-col span="7">使用方法：</van-col>
+					<van-col span="17">
+          凭小程序订单里的二维码或者身份证直接入园，也可以凭借票码到自助取票机（迎宾门）取票入园
+          </van-col>
+				</van-row>
+			</view>
+			<view class="reserve">
+				<view>入园时间：</view>
+				<view>09:00——17:30</view>
+			</view>
+		</view>
+	</view>
+	<!-- 退改规则 -->
+	<view class="mustbe">
+		<view class="padding-xs understood">
+			<view class="strong">退改规则</view>
+      <view>
+				<van-row gutter="20">
+					<van-col span="7">退改规则：</van-col>
+					<van-col span="17">
+          支付成功的订单，未使用的可以提交退票申请。工作人员将在1—3三个工作日内处理您的退票申请。门票一经领取或刷码（身份证）不予退票，遗失不补票，敬请谅解。
+          </van-col>
+				</van-row>
+			</view>
+		</view>
+	</view>
+	<!-- <view>
+    <view class="flex justify-start">
+      <view class="radius">
+        <image class="padding-sm img" src="{{pro.photo_x}}"></image>
+      </view>
+      <view class="padding-sm radius xinxi">
+        <view class="name">{{pro.name}}</view>
+        <view class="money">￥{{pro.price_yh}}</view>
+        <view class="stock">库存：{{pro.num}}</view>
+      </view>
+    </view>
+    <view class="flex solid-bottom padding justify-between">
+      <view class="radius numbers">购买数量</view>
+      <view class="radius">
+        <van-stepper value="{{shu}}" bind:change="onChange" />
+      </view>
+    </view>
+    <view class="padding flex flex-direction">
+      <button class="cu-btn bg-blue lg" bindtap="once" data-id="{{item.id}}">立即购买</button>
+    </view>
+  </view> -->
+</van-action-sheet>

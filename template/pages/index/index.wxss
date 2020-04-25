@@ -1,0 +1,184 @@
+page {
+  font-family: "楷体";
+  /*微信小程序中，使用rpx做单位*/
+}
+
+.tower-swiper .tower-item {
+  transform: scale(calc(0.5 + var(--index) / 10));
+  margin-left: calc(var(--left) * 100rpx - 150rpx);
+  z-index: var(--index);
+}
+
+/* 新项目开始 */
+.notice {
+  width: 86%;
+  height: 13vh;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 7%;
+  margin-top: 6%;
+  box-shadow: 0rpx 0rpx 16rpx #969799;
+  border-radius: 80rpx;
+}
+
+.cont {
+  width: 95%;
+  /* height: 13vh; */
+}
+
+.logo {
+  font-size: 33rpx;
+  text-align: center;
+}
+
+.introduce {
+  font-size: 23rpx;
+}
+
+.title {
+  width: 86%;
+  margin-left: 7%;
+  text-indent: 24rpx;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.icon_title {
+  font-size: 25rpx;
+}
+
+.sell {
+  background-color: gainsboro;
+  /* flex-wrap: wrap; */
+}
+
+.moneys {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.full,
+.half {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-left: 5%;
+}
+.stripe{
+  height:0.4rem;
+  background-color:gainsboro;
+}
+.stripes{
+  height:0.4rem;
+  background-color:gainsboro;
+  margin-top:30rpx;
+}
+.vertical{
+  font-size:35rpx;
+}
+.vertical_icon{
+  width:1rem;
+  height:1rem;
+}
+.money {
+  dispaly: flex;
+  color: red;
+  font-size: 35rpx;
+  align-self: flex-end;
+}
+
+.delete {
+  dispaly: flex;
+  font-size: 25rpx;
+  align-self: flex-end;
+  text-decoration: line-through;
+}
+
+.btn {
+  dispaly: flex;
+  width: 20%;
+  height: 4vh;
+  border-radius: 80rpx;
+  font-size: 20rpx;
+  justify-content: center;
+  align-self: center;
+  font-size: 30rpx;
+}
+.btn navigator{
+  display: flex;
+  align-items: center;
+}
+.see {
+  width: 88vw;
+  height: 6vh;
+  font-size: 30rpx;
+}
+
+.strategy {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.strategy image {
+  width: 100%;
+  height: 10rem;
+  border-radius: 20rpx;
+}
+
+.mine {
+  width: 16%;
+  height: 11vh;
+  border-radius: 10rpx;
+  box-shadow: 0rpx 0rpx 10rpx;
+  bottom: 0;
+  position: fixed;
+  margin-left: 84%;
+  margin-bottom: 100rpx;
+  background-color: white;
+}
+
+.head {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* 新项目结束 */
+/* .list {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.left {
+  width: 43vw;
+  height: 50vh;
+  border: 1px solid;
+}
+
+.amount {
+  flex-wrap: wrap;
+  padding-top: 30rpx;
+  line-height: 1;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 25rpx;
+}
+
+.money {
+  color: red;
+  font-size: 30rpx;
+}
+
+.dele {
+  text-decoration: line-through;
+  font-size: 25rpx;
+} */
+
+/* .btn {
+  border: 1px solid gray;
+} */

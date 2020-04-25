@@ -1,0 +1,167 @@
+<!--pages/buying/buying.wxml-->
+<!-- 标头 -->
+<view class="title">
+	<view class="padding">
+		<van-row gutter="20">
+			<van-col span="12">
+				<view>清明上河园全价大门票</view>
+			</van-col>
+			<van-col span="12">
+				<view class="buy" bindtap="buy">购票须知></view>
+			</van-col>
+		</van-row>
+	</view>
+</view>
+<!-- 使用日期 -->
+<view class="date">
+	<view class="padding tips">
+		<view class="choice">请选择使用日期</view>
+		<van-row gutter="20" class="point">
+			<van-col span="6" bindtap="change">
+				<view class="time" style="border: 1px solid {{color}};">
+					<view class="day">今天{{time}}</view>
+					<view class="money">￥{{money}}</view>
+				</view>
+			</van-col>
+			<van-col span="6">
+				<view class="duo" bindtap="changess">
+					<van-cell bind:click="onDisplay">
+						<view class="times" style="border: 1px solid {{colores}};">
+							<view class="day">{{date}}</view>
+							<view class="money">￥{{moneyes}}</view>
+						</view>
+					</van-cell>
+				</view>
+			</van-col>
+		</van-row>
+	</view>
+</view>
+<!-- 购买票数 -->
+<view class="poll">
+	<view class="padding">
+		<van-row gutter="20">
+			<van-col span="12">
+				<view class="votes">购买数量</view>
+			</van-col>
+			<van-col span="12">
+				<view class="device">
+					<van-stepper value="{{shu}}" bind:change="onChange" />
+				</view>
+			</van-col>
+		</van-row>
+	</view>
+</view>
+<!-- 游客信息 -->
+<view class="news">
+	<view class="flex padding new">游客信息</view>
+	<view class="padding">
+		<van-cell-group>
+			<van-field value="{{ username }}" required clearable label="姓名" icon="question-o" placeholder="请输入姓名" bind:click-icon="onClickIcon" bindblur="name" />
+			<van-field value="{{ account }}" required clearable label="身份证" icon="question-o" placeholder="请输入身份证号" bind:click-icon="onClickIcon" bindblur="account" />
+			<van-field value="{{ phone }}" required clearable label="手机号" icon="question-o" placeholder="请输入手机号" maxlength="11" bind:click-icon="onClickIcon" bindblur="phone" />
+		</van-cell-group>
+	</view>
+</view>
+<!-- 优惠券 -->
+<view class="coupon">
+	<view class="padding">
+		<van-row gutter="20">
+			<van-col span="8">优惠券</van-col>
+			<van-col span="10">暂无可用优惠券</van-col>
+			<van-col span="6" class="couicon"> > </van-col>
+		</van-row>
+	</view>
+</view>
+<!-- 结算价钱 -->
+<view class="paly">
+	<view>
+		<van-row gutter="20">
+			<van-col span="16" class="square">
+				<view>
+					<view class="flex margin">
+						<view>总额：</view>
+						<view class="nums">￥{{total}}</view>
+					</view>
+				</view>
+			</van-col>
+			<van-col span="8">
+				<view class="settle" bindtap="pay">去支付</view>
+			</van-col>
+		</van-row>
+	</view>
+</view>
+<!-- 日历 -->
+<van-calendar show="{{ showes }}" bind:close="onCloses" show-confirm="{{ false }}" bind:confirm="onConfirm" />
+<!-- 上拉菜单 -->
+<van-action-sheet bind:close="onClose" show="{{ show }}">
+	<view class="felx margin sheet_head">购买须知</view>
+	<!-- 轮播 -->
+	<view class="screen">
+		<swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+			<swiper-item wx:for="{{fous}}" wx:key>
+				<image src="{{item.photo}}" mode="aspectFill"></image>
+			</swiper-item>
+		</swiper>
+		<view class="padding-xs strong">商品名称</view>
+	</view>
+	<!-- 商品名称 -->
+	<view class="mustbe">
+		<view class="padding-xs understood">
+			<view class="strong">预订说明</view>
+			<view class="reserve">
+				<view>预定时间：</view>
+				<view>16:00前可购买当日门票</view>
+			</view>
+			<view class="reserve">
+				<view>有效期：</view>
+				<view>游玩当日有效</view>
+			</view>
+			<view class="reserve">
+				<view>票种说明：</view>
+				<view>成人票</view>
+			</view>
+		</view>
+	</view>
+	<!-- 费用说明 -->
+	<view class="mustbe">
+		<view class="padding-xs understood">
+			<view class="strong">费用说明</view>
+			<view class="reserve">
+				<view>费用包含：</view>
+				<view>景区全价门票一张</view>
+			</view>
+		</view>
+	</view>
+	<!-- 使用说明 -->
+	<view class="mustbe">
+		<view class="padding-xs understood">
+			<view class="strong">使用说明</view>
+			<view>
+				<van-row gutter="20">
+					<van-col span="7">使用方法：</van-col>
+					<van-col span="17">
+						凭小程序订单里的二维码或者身份证直接入园，也可以凭借票码到自助取票机（迎宾门）取票入园
+					</van-col>
+				</van-row>
+			</view>
+			<view class="reserve">
+				<view>入园时间：</view>
+				<view>09:00——17:30</view>
+			</view>
+		</view>
+	</view>
+	<!-- 退改规则 -->
+	<view class="mustbe">
+		<view class="padding-xs understood">
+			<view class="strong">退改规则</view>
+			<view>
+				<van-row gutter="20">
+					<van-col span="7">退改规则：</van-col>
+					<van-col span="17">
+						支付成功的订单，未使用的可以提交退票申请。工作人员将在1—3三个工作日内处理您的退票申请。门票一经领取或刷码（身份证）不予退票，遗失不补票，敬请谅解。
+					</van-col>
+				</van-row>
+			</view>
+		</view>
+	</view>
+</van-action-sheet>
